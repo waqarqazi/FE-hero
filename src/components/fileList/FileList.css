@@ -21,7 +21,7 @@
   }
   
   .file-list-item {
-    display: flex; 
+    display: block; 
     justify-content: space-between; 
     align-items: center; 
     padding: 10px 15px; 
@@ -74,3 +74,15 @@
   .copy-link-btn:hover {
     background-color: #0056b3; 
   }
+
+
+.file-link-display {
+  margin-top: 10px; /* Adds space above the link */
+  font-size: 14px;  /* Adjusts font size */
+  display: block;   /* Ensures the link starts on a new line */
+}
+
+.file-link {
+  color: blue;
+  text-decoration: underline;
+}

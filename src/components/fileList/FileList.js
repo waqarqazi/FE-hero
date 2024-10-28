@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import './FileList.css'; // Importing the CSS file for styles
 import { getFileList } from 'services/actionServices';
 
@@ -10,7 +9,7 @@ const FileList = () => {
         const fetchFiles = async () => {
             try {
                 const response = await getFileList();
-                console.log("response",response);
+                console.log("response", response);
                 setFiles(response?.files);
             } catch (error) {
                 console.error('Error fetching files:', error);
@@ -18,15 +17,6 @@ const FileList = () => {
         };
         fetchFiles();
     }, []);
-
-    const handleCopyLink = (shareId) => {
-        const link = `${process.env.REACT_APP_BASE_URL}/api/files/share/${shareId}`;
-        navigator.clipboard.writeText(link).then(() => {
-            alert('Link copied to clipboard!');
-        }).catch((error) => {
-            console.error('Could not copy link:', error);
-        });
-    };
 
     const renderList = () => {
         if (!Array.isArray(files) || files.length === 0) {
@@ -40,7 +30,7 @@ const FileList = () => {
                         <li key={file?._id} className="file-list-item">
                             <div className="file-info">
                                 <a
-                                    href={`http://localhost:3000/api/files/share/${file.shareId}`}
+                                    href={`${process.env.REACT_APP_BASE_URL}/api/files/share/${file.shareId}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="file-link"
@@ -56,18 +46,25 @@ const FileList = () => {
                                     ))}
                                 </div>
                             )}
-                            <button
-                                onClick={() => handleCopyLink(file?.shareId)}
-                                className="copy-link-btn"
-                            >
-                                Copy Link
-                            </button>
+                           
+                            <div className="file-link-display">
+                                <span>Link: </span>
+                                <a
+                                    href={`${process.env.REACT_APP_BASE_URL}/api/files/share/${file.shareId}`}
+                                    className="file-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {`${process.env.REACT_APP_BASE_URL}/api/files/share/${file.shareId}`}
+                                </a>
+                            </div>
                         </li>
                     ))}
                 </ul>
             </>
-        )
+        );
     }
+
     return (
         <div className="file-list-container">
             {renderList()}
