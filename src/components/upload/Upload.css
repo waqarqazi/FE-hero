@@ -1,0 +1,127 @@
+.upload-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+  
+  .dropzone {
+    border: 2px dashed #007bff;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .dropzone:hover {
+    border-color: #0056b3;
+  }
+  
+  .preview-container {
+    margin-bottom: 20px;
+  }
+  
+  .preview-image, .preview-video {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .tags-container {
+    margin-bottom: 20px;
+  }
+  
+  .tag-input {
+    width: calc(100% - 100px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .tags-display {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .tag {
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .remove-tag-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .remove-tag-btn:hover {
+    color: #ff4d4d; /* Change color on hover */
+  }
+  
+  .upload-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .upload-btn:disabled {
+    background-color: #cccccc; /* Gray color when disabled */
+    cursor: not-allowed;
+  }
+  
+  .upload-btn:hover:not(:disabled) {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  @media (max-width: 600px) {
+    .tag-input {
+      width: calc(100% - 50px);
+    }
+  }
+  .spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure it appears on top of other content */
+  }
+  
+  .spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

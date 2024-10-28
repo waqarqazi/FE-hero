@@ -1,0 +1,108 @@
+
+
+
+// font-size 29px
+@mixin font29 {
+  font-weight: 400;
+  font-size: calc(10px + (28 - 10) * (100vw - 280px) / (2560 - 280));
+}
+@mixin p-small {
+  font-family: 'Montserrat';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
+$xxs: 450px;
+$md: 1024px;
+$lg: 1500px;
+$xl: 1920px;
+$neutral1: #363636;
+.inputContainer {
+  z-index: 1;
+  position: relative;
+  label {
+    @include font29; 
+    @include p-small;
+    font-weight: bold;
+    color: $neutral1;
+    font-family: 'Montserrat';
+    font-style: normal;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    @media (max-width: $md) {
+      margin-bottom: 8px;
+    }
+    @media (max-width: $xxs) {
+      margin-bottom: 5px;
+    }
+  }
+
+  input {
+    background: #ffffff;
+    border-radius: 6px;
+    width: 100%;
+    padding: 7px 10px;
+    font-size: 14px;
+    color: #2d2d32;
+    margin-top: 4px;
+    font-weight: 500;
+    height: 41px;
+
+    &::-webkit-credentials-auto-fill-button {
+      visibility: hidden !important;
+      position: absolute !important;
+      right: 0 !important;
+    }
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: #9da1aa !important;
+      font-size: 14px;
+      @media (max-width: $lg) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .icon {
+    position: absolute;
+    right: 13px;
+    top: 13px;
+    width: 24px;
+    height: 24px;
+  
+
+    cursor: pointer;
+    @media (max-width: $xl) {
+      width: 20px;
+      height: 23px;
+      top: 14;
+    }
+    @media (max-width: $lg) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+ 
+
+  .errorMessage {
+    position: absolute;
+    display: block;
+    font-size: 12px;
+    margin-left: 5px;
+    color: #ff5050;
+  }
+}
+
+input[type='password'] {
+  &::placeholder {
+    position: relative;
+    top: 2px;
+  }
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

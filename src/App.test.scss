@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+}
+
+* {
+  font-family: Montserrat;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  margin: 0px;
+  padding: 0px;
+}
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: #e6e7e8; /* Optional: just make scrollbar invisible */
+  height: 0px;
+  border-radius: 8px;
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #c7c8ca;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 5px; /* Remove scrollbar space */
+  background: #e6e7e8; /* Optional: just make scrollbar invisible */
+  height: 5px;
+  border-radius: 8px;
+  display: none;
+}
+.css-1okebmr-indicatorSeparator {
+  width: 0px !important;
+}
+.css-tlfecz-indicatorContainer {
+  padding: 0px !important;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+tr:last-child,
+td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+tr:first-child,
+td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+td {
+  background: #ffffff;
+}
+
+.react-datepicker-popper {
+  z-index: 10;
+}
+
+input::-webkit-caps-lock-indicator {
+  content: none;
+}

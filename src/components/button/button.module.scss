@@ -1,0 +1,49 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+ 
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 36px;
+  padding-top: calc(5px + (15 - 5) * (100vw - 280px) / (2560 - 280));
+  padding-bottom: calc(5px + (15 - 5) * (100vw - 280px) / (2560 - 280));
+  padding-left: calc(11px + (30 - 11) * (100vw - 280px) / (2560 - 280));
+  padding-right: calc(11px + (40 - 11) * (100vw - 280px) / (2560 - 280));
+ 
+  @media (min-width: 1350px) {
+    width: 170px;
+  } 
+  background-color: $btn;
+  border-radius: 5px;
+
+  cursor: pointer;
+  border: none;
+  box-shadow: none;
+  &:disabled {
+    background-color: #9da1aa;
+    color: #363636;
+  }
+
+  .img {
+    margin-left: calc(8px + (19 - 6) * (100vw - 280px) / (2560 - 280));
+    width: 13px;
+    height: 13px;
+  }
+
+  .img1 {
+    margin-right: calc(6px + (7 - 6) * (100vw - 280px) / (2560 - 280));
+    width: 13px;
+    height: 13px;
+    z-index: 2;
+
+  }
+
+  .btnTitle {
+    color: white ;
+    font-weight: 600;
+    @include font16; 
+  }
+}

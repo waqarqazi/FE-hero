@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src", // Set the base URL for module resolution
+    "paths": {
+      "components/*": ["components/*"], // Define an alias for the components directory
+      "pages/*": ["pages/*"], // Define an alias for the pages directory
+      "constants/*": ["constants/*"],
+      "hoc/*": ["hoc/*"],
+      "permissions/*": ["permissions/*"],
+      "services/*": ["services/*"],
+      "utils/*": ["utils/*"],
+      "redux/*": ["redux/*"],
+      
+    },
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ]
+}
