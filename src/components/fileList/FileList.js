@@ -25,9 +25,9 @@ const FileList = () => {
         return (
             <>
                 <h2 className="file-list-title">Uploaded Files</h2>
-                <ul className="file-list">
+                <div className="file-list">
                     {files?.map((file) => (
-                        <li key={file?._id} className="file-list-item">
+                        <div key={file?._id} className="file-list-item">
                             <div className="file-info">
                                 <a
                                     href={`${process.env.REACT_APP_BASE_URL}/api/files/share/${file.shareId}`}
@@ -46,7 +46,6 @@ const FileList = () => {
                                     ))}
                                 </div>
                             )}
-                           
                             <div className="file-link-display">
                                 <span>Link: </span>
                                 <a
@@ -58,12 +57,12 @@ const FileList = () => {
                                     {`${process.env.REACT_APP_BASE_URL}/api/files/share/${file.shareId}`}
                                 </a>
                             </div>
-                        </li>
+                        </div>
                     ))}
-                </ul>
+                </div>
             </>
         );
-    }
+    };
 
     return (
         <div className="file-list-container">
